@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Search Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/219/529/small/medical-background.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .features {
+            margin-bottom: 20px;
+            /*  */
+            height: 80vh;
+            background-position: center;
+            background-image: url(https://thumbs.dreamstime.com/b/healthcare-technology-doctor-using-digital-tablet-icon-medical-network-hospital-background-162019727.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        .search-box, .contact-box {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .search-box input, .contact-box input, .contact-box textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        .search-box button, .contact-box button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .search-box button:hover, .contact-box button:hover {
+            background-color: #45a049;
+        }
+        .homeh1{
+            font-family: "Permanent Marker", cursive;
+            padding: 10vh;
+            font-size: 40px;
+        }
+        .headerh1{
+            font-family: "Permanent Marker", cursive;
+            font-size: 20px;
+        }
+        .homep{
+            font-family: "Caveat", cursive;
+            padding-right: 100vh;
+            padding-left: 10vh;
+        }
+        .nava{
+            
+            font-family: "Caveat", cursive;
+            font-size: 20px;
+            padding-left: 600px;
+        }
+        .searchh1{
+            font-family: "Permanent Marker", cursive;
+            font-size: 30px;
+        }
+        input[type=text] {
+         width: 30%;
+         padding: 12px 20px;
+         margin: 8px 0;
+          box-sizing: border-box;
+          height: 10%;
+        }
+        input[type=email] {
+         width: 30%;
+         padding: 12px 20px;
+         margin: 8px 0;
+          box-sizing: border-box;
+          height: 10%;
+        }
+        .button{
+            font-family: "Caveat", cursive;
+        }
+        .search-box{
+            background-image: url(https://www.shutterstock.com/image-photo/telemedicine-young-happy-male-middle-600nw-2083496362.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 20px;
+            /*  */
+            height: 80vh;
+            padding: 20vh;
+        }
+        .contacth1{
+            font-family: "Permanent Marker", cursive;
+        }
+        .contact-box{
+            background-image: url(https://png.pngtree.com/background/20210711/original/pngtree-medical-research-medical-diagnosis-picture-image_1074207.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 20px;
+            padding: 80px;
+            
+        }
+        #message{
+            width: 380px;
+        }
+        .doctor{
+            color:#272b94;
+           
+           padding: 20px;
+            font-family: "Caveat", cursive;
+           
+            font-size: 20px;
+            
+
+        }
+        .doctorh1{
+            font-family: "Permanent Marker", cursive;
+            font-size: 30px;
+            text-align: center;
+        }
+        .doctordiv{
+            border: 2px solid rgb(14, 81, 137);
+            width: 60%;
+            background-image: url(data:image/jpeg;base64,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);
+            background-repeat: no-repeat;
+            background-size: cover;
+           
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="headerh1">Doctor Search Website</h1>
+    </header>
+    <nav class="nava">
+        <a href="#home">Home</a>
+        <a href="#search">Search Doctors</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="home" class="features">
+            <h2 class="homeh1">Features We Provide</h2>
+            <p class="homep">The goal of DoctorSearch is to streamline the process of finding the perfect healthcare provider. We connect users with highly rated, trustworthy doctors based on their specific needs and medical conditions. Our platform offers detailed profiles, patient reviews, and easy booking options to ensure a smooth experience. DoctorSearch aims to eliminate the stress and uncertainty of finding the right doctor, providing a reliable resource for quality healthcare. We believe everyone deserves quick and confident access to the best medical professionals. Our mission is to enhance patient experiences and improve health outcomes through efficient and personalized doctor matching. By leveraging technology and user feedback, DoctorSearch continuously refines its services to meet the evolving needs of patients. Join us in transforming healthcare accessibility and making the journey to wellness easier for everyone.</p>
+        </section>
+        <section id="search" class="search-box">
+            <h2 class="searchh1">Search Doctors</h2>
+            <input type="text" id="specialty" class="searchspec"  placeholder="Enter Specialty">
+            <input type="text" id="area" class="searchar" placeholder="Enter Area">
+            <button class="button" onclick="searchDoctor()">Search</button>
+            <div id="results"></div>
+        </section>
+        <section id="contact" class="contact-box">
+            <h2 class="contacth1">Contact Us</h2>
+            <input type="text" id="name" placeholder="Your Name"></br>
+            <input type="email" id="email" placeholder="Your Email"></br>
+            <!-- <textarea id="message" placeholder="Your Message"></textarea></br>
+            <button onclick="submitContact()">Submit</button> -->
+            <html>
+                <head>
+                    <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <title></title>
+                    <meta name="description" content="">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel="stylesheet" href="">
+                </head>
+                <body>
+                    <!--[if lt IE 7]>
+                        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+                    <![endif]-->
+                    
+                    <script src="" async defer></script>
+                </body>
+            </html>
+            <textarea id="message" placeholder="Your Message" ></textarea></br>
+            <button onclick="submitContact()">Submit</button></br>
+        </section>
+    </div>
+    
+    <script>
+        function searchDoctor() {
+            var specialty = document.getElementById('specialty').value;
+            var area = document.getElementById('area').value;
+            var results = document.getElementById('results');
+            
+            if(specialty && area) {
+                // Here you would normally fetch data from a server
+                // For this example, we just simulate the response
+                results.innerHTML = `<div class="doctordiv">
+                    <h3 class="doctorh1">Doctor Results</h3>
+                    <p class="doctor">1.Name of the doctor: Dr. John Doe </br> Address- 123 Main St, ${area} </br>contact details: 8465825748</p >
+                    <p class="doctor">2.Name of the doctor: Dr. Jane Smith </br> Address- 456 Elm St, ${area} </br>contact details: 9473648254</p></div>
+                `;
+            } else {
+                results.innerHTML = '<p>Please enter both specialty and area.</p>';
+            }
+        }
+        function submitContact() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            if(name && email && message) {
+                alert('Thank you for your message, ' + name + '! We will get back to you soon.');
+                // Reset form
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+    </script>
+</body>
+</html>
