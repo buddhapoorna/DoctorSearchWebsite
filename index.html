@@ -217,10 +217,12 @@
             if(specialty && area) {
                 // Here you would normally fetch data from a server
                 // For this example, we just simulate the response
-                results.innerHTML = `<div class="doctordiv">
-                    <h3 class="doctorh1">Doctor Results</h3>
-                    <p class="doctor">1.Name of the doctor: Dr. John Doe </br> Address- 123 Main St, ${area} </br>contact details: 8465825748</p >
-                    <p class="doctor">2.Name of the doctor: Dr. Jane Smith </br> Address- 456 Elm St, ${area} </br>contact details: 9473648254</p></div>
+                results.innerHTML = `<div style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: center; width: 300px;">
+        <h2 style="margin: 0 0 10px; font-size: 24px; color: #333;">Dr. John Doe</h2>
+        <p style="margin: 5px 0; font-size: 16px; color: #555;">123 Health St.,  ${area} , H1234</p>
+        <p style="margin: 5px 0; font-size: 16px; color: #555;">Mobile: (123) 456-7890</p>
+        <a href="#" style="display: inline-block; margin-top: 15px; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; border: none; border-radius: 5px; text-decoration: none; cursor: pointer;">Book Appointment</a>
+    </div>
                 `;
             } else {
                 results.innerHTML = '<p>Please enter both specialty and area.</p>';
